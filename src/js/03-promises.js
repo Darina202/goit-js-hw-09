@@ -31,9 +31,9 @@ function generatePromises(e) {
   let inputStep = Number(refs.step.value);
   let amount = Number(refs.amount.value);
 
-  for (let i = 1; i <= amount; i += 1) {
+  for (let i = 0; i <= amount; i += 1) {
     let currentDelay = firstDelay + inputStep * i;
-    createPromise(i, currentDelay)
+    createPromise(i + 1, currentDelay)
       .then(({ position, delay }) => {
         Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
         // console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
